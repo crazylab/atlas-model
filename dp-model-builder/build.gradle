@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'atlas'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.atlas', name: 'atlas-client-common', version: '2.1.0'
+    compile group: 'org.apache.atlas', name: 'atlas-common', version: '2.1.0'
+    compile group: 'org.apache.atlas', name: 'atlas-client-v2', version: '2.1.0'
+    compile group: 'org.apache.atlas', name: 'atlas-intg', version: '2.1.0'
+}

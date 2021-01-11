@@ -1,0 +1,723 @@
+{
+  "entities": [
+    {
+      "typeName": "avro_type",
+      "attributes": {
+        "qualifiedName": "int",
+        "name": "int",
+        "type": "int"
+      },
+      "guid": "-29621189525183",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_type",
+      "attributes": {
+        "qualifiedName": "long",
+        "name": "long",
+        "type": "long"
+      },
+      "guid": "-29621189525184",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_type",
+      "attributes": {
+        "qualifiedName": "string",
+        "name": "string",
+        "type": "string"
+      },
+      "guid": "-29621189525185",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_type",
+      "attributes": {
+        "qualifiedName": "location",
+        "name": "location",
+        "type": "coordinate"
+      },
+      "guid": "-29621189525186",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_type",
+      "attributes": {
+        "qualifiedName": "date",
+        "name": "date",
+        "type": "timestamp"
+      },
+      "guid": "-29621189525187",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "owner",
+      "attributes": {
+        "ownerType": "Business",
+        "qualifiedName": "john@doe.com",
+        "name": "John Doe",
+        "id": "John Doe_id",
+        "email": "john@doe.com"
+      },
+      "guid": "-29621189525188",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_schema",
+      "attributes": {
+        "qualifiedName": "demographics_table",
+        "name": "demographics_table",
+        "namespace": "default",
+        "type": "struct"
+      },
+      "guid": "-29621189525194",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "fields": [
+          {
+            "guid": "-29621189525190",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525191",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525192",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525193",
+            "typeName": "avro_field"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "id",
+        "name": "id"
+      },
+      "guid": "-29621189525190",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "name",
+        "name": "name"
+      },
+      "guid": "-29621189525191",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "age",
+        "name": "age"
+      },
+      "guid": "-29621189525192",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525183",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "location",
+        "name": "location"
+      },
+      "guid": "-29621189525193",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525186",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "sql_port",
+      "attributes": {
+        "portType": "SQLPort",
+        "createdAt": 61558165800000,
+        "dataSchema": {
+          "guid": "-29621189525194",
+          "typeName": "avro_schema"
+        },
+        "address": "jdbc://path/to/table/demographics_table",
+        "lastUpdatedAt": 61558165800000,
+        "qualifiedName": "demographics_table SQL Port",
+        "name": "demographics_table",
+        "description": "Description of this SQL Port",
+        "tableName": "demographics_table"
+      },
+      "guid": "-29621189525195",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "data": {
+          "guid": "-29621189525189",
+          "typeName": "data"
+        }
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_schema",
+      "attributes": {
+        "qualifiedName": "health_records",
+        "name": "health_records",
+        "namespace": "default",
+        "type": "struct"
+      },
+      "guid": "-29621189525200",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "fields": [
+          {
+            "guid": "-29621189525197",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525198",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525199",
+            "typeName": "avro_field"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "id",
+        "name": "id"
+      },
+      "guid": "-29621189525197",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "disease",
+        "name": "disease"
+      },
+      "guid": "-29621189525198",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "lastCheckupDate",
+        "name": "lastCheckupDate"
+      },
+      "guid": "-29621189525199",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525187",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "batch_port",
+      "attributes": {
+        "portType": "BatchPort",
+        "createdAt": 61558165800000,
+        "dataSchema": {
+          "guid": "-29621189525200",
+          "typeName": "avro_schema"
+        },
+        "lastUpdatedAt": 61558165800000,
+        "baseAddress": "adls://base/address/to/data/health_records.parquet",
+        "qualifiedName": "health_records Batch Port",
+        "name": "health_records",
+        "description": "Description of this SQL Port",
+        "fileFormat": "parquet"
+      },
+      "guid": "-29621189525201",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "data": {
+          "guid": "-29621189525196",
+          "typeName": "data"
+        }
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "data",
+      "attributes": {
+        "adGroup": "demographics AD Group",
+        "sourceSystem": "demographicsDefault Source",
+        "qualifiedName": "demographics",
+        "name": "demographics",
+        "description": "Description of demographics data",
+        "version": "1.0",
+        "totalRecordCount": 0
+      },
+      "guid": "-29621189525189",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "data",
+      "attributes": {
+        "adGroup": "health_records AD Group",
+        "sourceSystem": "health_recordsDefault Source",
+        "qualifiedName": "health_records",
+        "name": "health_records",
+        "description": "Description of health_records data",
+        "version": "1.0",
+        "totalRecordCount": 100000
+      },
+      "guid": "-29621189525196",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "avro_schema",
+      "attributes": {
+        "qualifiedName": "patient_count_by_disease",
+        "name": "patient_count_by_disease",
+        "namespace": "default",
+        "type": "struct"
+      },
+      "guid": "-29621189525205",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "fields": [
+          {
+            "guid": "-29621189525203",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525204",
+            "typeName": "avro_field"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "disease",
+        "name": "disease"
+      },
+      "guid": "-29621189525203",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "count",
+        "name": "count"
+      },
+      "guid": "-29621189525204",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525184",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "batch_port",
+      "attributes": {
+        "portType": "BatchPort",
+        "createdAt": 61558165800000,
+        "dataSchema": {
+          "guid": "-29621189525205",
+          "typeName": "avro_schema"
+        },
+        "lastUpdatedAt": 61558165800000,
+        "baseAddress": "adls://base/address/to/data/patient_count_by_disease.csv",
+        "qualifiedName": "patient_count_by_disease Batch Port",
+        "name": "patient_count_by_disease",
+        "description": "Description of this SQL Port",
+        "fileFormat": "csv"
+      },
+      "guid": "-29621189525206",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "data": {
+          "guid": "-29621189525202",
+          "typeName": "data"
+        }
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_schema",
+      "attributes": {
+        "qualifiedName": "patient_count_by_location",
+        "name": "patient_count_by_location",
+        "namespace": "default",
+        "type": "struct"
+      },
+      "guid": "-29621189525210",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "fields": [
+          {
+            "guid": "-29621189525208",
+            "typeName": "avro_field"
+          },
+          {
+            "guid": "-29621189525209",
+            "typeName": "avro_field"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "location",
+        "name": "location"
+      },
+      "guid": "-29621189525208",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525185",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "avro_field",
+      "attributes": {
+        "qualifiedName": "count",
+        "name": "count"
+      },
+      "guid": "-29621189525209",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "type": [
+          {
+            "guid": "-29621189525184",
+            "typeName": "avro_type"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "sql_port",
+      "attributes": {
+        "portType": "SQLPort",
+        "createdAt": 61558165800000,
+        "dataSchema": {
+          "guid": "-29621189525210",
+          "typeName": "avro_schema"
+        },
+        "address": "jdbc://path/to/table/patient_count_by_location_table",
+        "lastUpdatedAt": 61558165800000,
+        "qualifiedName": "patient_count_by_location_table SQL Port",
+        "name": "patient_count_by_location_table",
+        "description": "Description of this SQL Port",
+        "tableName": "patient_count_by_location_table"
+      },
+      "guid": "-29621189525211",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "data": {
+          "guid": "-29621189525207",
+          "typeName": "data"
+        }
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "sql_port",
+      "attributes": {
+        "portType": "SQLPort",
+        "createdAt": 61558165800000,
+        "dataSchema": {
+          "guid": "-29621189525210",
+          "typeName": "avro_schema"
+        },
+        "address": "jdbc://path/to/table/patient_count_by_location",
+        "lastUpdatedAt": 61558165800000,
+        "qualifiedName": "patient_count_by_location SQL Port",
+        "name": "patient_count_by_location",
+        "description": "Description of this SQL Port",
+        "tableName": "patient_count_by_location"
+      },
+      "guid": "-29621189525212",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "data": {
+          "guid": "-29621189525207",
+          "typeName": "data"
+        }
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "data",
+      "attributes": {
+        "adGroup": "patient_count_by_disease AD Group",
+        "sourceSystem": "patient_count_by_diseaseDefault Source",
+        "qualifiedName": "patient_count_by_disease",
+        "name": "patient_count_by_disease",
+        "description": "Description of patient_count_by_disease data",
+        "version": "1.0",
+        "totalRecordCount": 0
+      },
+      "guid": "-29621189525202",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "data",
+      "attributes": {
+        "adGroup": "patient_count_by_location AD Group",
+        "sourceSystem": "patient_count_by_locationDefault Source",
+        "qualifiedName": "patient_count_by_location",
+        "name": "patient_count_by_location",
+        "description": "Description of patient_count_by_location data",
+        "version": "1.0",
+        "totalRecordCount": 0
+      },
+      "guid": "-29621189525207",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "proxy": false
+    },
+    {
+      "typeName": "data_product",
+      "attributes": {
+        "owner": [
+          {
+            "guid": "-29621189525188",
+            "typeName": "owner"
+          }
+        ],
+        "sourceCodeUrl": "http://dev.azure.com/source/patient_info",
+        "qualifiedName": "patient_info",
+        "name": "patient_info",
+        "description": "Description of patient_info data product",
+        "id": "patient_info_id",
+        "machineName": "patient_info_short_name",
+        "monitoringDashboardUrl": "http://monitoring.dashboard/patient_info"
+      },
+      "guid": "-29621189525213",
+      "isIncomplete": false,
+      "provenanceType": 0,
+      "version": 0,
+      "relationshipAttributes": {
+        "outputs": [
+          {
+            "guid": "-29621189525202",
+            "typeName": "data"
+          },
+          {
+            "guid": "-29621189525207",
+            "typeName": "data"
+          }
+        ],
+        "inputs": [
+          {
+            "guid": "-29621189525189",
+            "typeName": "data"
+          },
+          {
+            "guid": "-29621189525196",
+            "typeName": "data"
+          }
+        ]
+      },
+      "proxy": false
+    },
+    {
+      "typeName": "Process",
+      "attributes": {
+        "name": "Spark Job 1",
+        "qualifiedName": "spark job 1"
+      },
+      "relationshipAttributes": {
+        "inputs": [
+          {
+            "guid": "-29621189525189",
+            "typeName": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "guid": "-29621189525207",
+            "typeName": "data"
+          }
+        ]
+      },
+      "guid": "-100",
+      "version": 0
+    },
+    {
+      "typeName": "Process",
+      "attributes": {
+        "name": "Spark Job 2",
+        "qualifiedName": "spark job 2"
+      },
+      "relationshipAttributes": {
+        "inputs": [
+          {
+            "guid": "-29621189525189",
+            "typeName": "data"
+          },
+          {
+            "guid": "-29621189525196",
+            "typeName": "data"
+          }
+        ],
+        "outputs": [
+          {
+            "guid": "-29621189525202",
+            "typeName": "data"
+          }
+        ]
+      },
+      "guid": "-200",
+      "version": 0
+    }
+  ]
+}

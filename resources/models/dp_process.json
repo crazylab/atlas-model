@@ -1,0 +1,58 @@
+{
+  "entityDefs": [
+    {
+      "name": "dp_process",
+      "category": "ENTITY",
+      "description": "Represents a process which consumes  Data Product",
+      "serviceType": "dp",
+      "superTypes": [
+        "Process"
+      ],
+      "attributeDefs": [],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    }
+  ],
+  "relationshipDefs": [
+    {
+      "name": "dp_process_input_port",
+      "description": "Data Product Process to Input Port relationship",
+      "relationshipCategory": "ASSOCIATION",
+      "relationshipLabel": "__data.inputPorts",
+      "endDef1": {
+        "name": "inputPorts",
+        "type": "dp_process",
+        "cardinality": "SET"
+      },
+      "endDef2": {
+        "name": "inputProcess",
+        "type": "port",
+        "cardinality": "SET"
+      },
+      "propagateTags": "NONE",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "dp_process_output_port",
+      "description": "Data Product Process to Output Port relationship",
+      "relationshipCategory": "ASSOCIATION",
+      "relationshipLabel": "__data.outputPorts",
+      "endDef1": {
+        "name": "outputPorts",
+        "type": "dp_process",
+        "cardinality": "SET"
+      },
+      "endDef2": {
+        "name": "outputProcess",
+        "type": "port",
+        "cardinality": "SET"
+      },
+      "propagateTags": "NONE",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    }
+  ]
+}

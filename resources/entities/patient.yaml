@@ -1,0 +1,28 @@
+patient info
+    - inputs
+        - demographics
+            - SQLPort
+                - demographics_schema
+                    - id
+                    - name
+                    - age
+                    - location
+
+        - health_record
+           - BatchPort
+              - health_record_schema
+                    - id
+                    - disease
+                    - lastCheckupDate
+
+    - outputs
+        - patient_count_by_location
+            - BatchPort, SQLPort
+                - patient_count_by_location_schema
+                    - location
+                    - count
+        - patient_count_by_disease
+            - BatchPort
+                - patient_count_by_disease_schema
+                    - disease
+                    - count

@@ -1,0 +1,536 @@
+{
+  "classificationDefs": [
+    {
+      "entityTypes": [
+        "data",
+        "data_product",
+        "port",
+        "avro_schema",
+        "avro_field"
+      ],
+      "attributeDefs": [],
+      "description": "PII Classification Tag",
+      "guid": "-1212",
+      "name": "PII",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    }
+  ],
+  "enumDefs": [
+    {
+      "name": "owner_type",
+      "description": "Type of ownership for a data product",
+      "category": "ENUM",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1,
+      "elementDefs": [
+        {
+          "value": "Business",
+          "description": "Business owner type",
+          "ordinal": 1
+        },
+        {
+          "value": "Technical",
+          "description": "Technical owner type",
+          "ordinal": 2
+        },
+        {
+          "value": "DataSteward",
+          "description": "Data Steward owner type",
+          "ordinal": 3
+        }
+      ]
+    },
+    {
+      "name": "port_type",
+      "description": "Represents the port types",
+      "category": "ENUM",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1,
+      "elementDefs": [
+        {
+          "value": "SQLPort",
+          "description": "SQL Port Type",
+          "ordinal": 1
+        },
+        {
+          "value": "BatchPort",
+          "description": "Batch Port Type",
+          "ordinal": 2
+        }
+      ]
+    }
+  ],
+  "entityDefs": [
+    {
+      "name": "data_product",
+      "category": "ENTITY",
+      "description": "Represents a Data Product",
+      "serviceType": "dp",
+      "superTypes": [
+        "Asset"
+      ],
+      "attributeDefs": [
+        {
+          "displayName": "Name",
+          "name": "name",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Full name of the data product",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "Machine Name",
+          "name": "machineName",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Short technical name of the data product",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "Id",
+          "name": "id",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Data Product ID",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "Description",
+          "name": "description",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Description of the data product",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Monitoring Dashboard Url",
+          "name": "monitoringDashboardUrl",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Monitoring Dashboard Url of the data product",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Source Code URL",
+          "name": "sourceCodeUrl",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Source code url for this data product",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Owner",
+          "name": "owner",
+          "typeName": "array<owner>",
+          "cardinality": "SET",
+          "description": "Owner of the data product",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Created At",
+          "name": "createdAt",
+          "typeName": "date",
+          "cardinality": "SINGLE",
+          "description": "Time when this data product have been created",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Last Updated At",
+          "name": "lastUpdatedAt",
+          "typeName": "date",
+          "cardinality": "SINGLE",
+          "description": "Last time when this data product have been updated",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        }
+      ],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "data",
+      "category": "ENTITY",
+      "description": "Represents a Data Set.",
+      "serviceType": "dp",
+      "superTypes": [
+        "DataSet"
+      ],
+      "attributeDefs": [
+        {
+          "displayName": "Data Name",
+          "name": "name",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Name of the data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "Description",
+          "name": "description",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Description of the data",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Total Record Count",
+          "name": "totalRecordCount",
+          "typeName": "long",
+          "cardinality": "SINGLE",
+          "description": "Total number of records in the data",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "AD Group",
+          "name": "adGroup",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "AD Group to get access to this data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Source System",
+          "name": "sourceSystem",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Source System of this data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Version",
+          "name": "version",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Version of the data set",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        }
+      ],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "port",
+      "description": "Represents a Data Product Port Super Type. This should only be used to derive other port types. Should not create any direct entity of this type",
+      "serviceType": "dp",
+      "superTypes": [
+        "Asset"
+      ],
+      "subTypes": [
+        "batch_port",
+        "sql_port"
+      ],
+      "options": {
+        "schemaElementsAttribute": "dataSchema"
+      },
+      "attributeDefs": [
+        {
+          "displayName": "Data Schema",
+          "name": "dataSchema",
+          "typeName": "avro_schema",
+          "cardinality": "SINGLE",
+          "description": "Schema of the data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        },
+        {
+          "displayName": "Description",
+          "name": "description",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Description of the port",
+          "includeInNotification": false,
+          "isIndexable": false,
+          "isOptional": true,
+          "isUnique": false
+        },
+        {
+          "displayName": "Created At",
+          "name": "createdAt",
+          "typeName": "date",
+          "cardinality": "SINGLE",
+          "description": "When first time data was available in this port",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        },
+        {
+          "displayName": "Last Updated At",
+          "name": "lastUpdatedAt",
+          "typeName": "date",
+          "cardinality": "SINGLE",
+          "description": "When was the last time data updated in this port",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        }
+      ],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "sql_port",
+      "description": "Represents a SQL Type of Port",
+      "serviceType": "dp",
+      "superTypes": [
+        "port"
+      ],
+      "attributeDefs": [
+        {
+          "displayName": "Table Name",
+          "name": "tableName",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Name of the SQL Table",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        },
+        {
+          "displayName": "Address",
+          "name": "address",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Connection string to connect to the SQL port",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "Port Type",
+          "name": "portType",
+          "typeName": "port_type",
+          "defaultValue": "SQLPort",
+          "cardinality": "SINGLE",
+          "description": "Type of the Port",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        }
+      ],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "batch_port",
+      "category": "ENTITY",
+      "description": "Represents a Batch Port",
+      "serviceType": "dp",
+      "superTypes": [
+        "port"
+      ],
+      "attributeDefs": [
+        {
+          "displayName": "Base Address",
+          "name": "baseAddress",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "Base location of the data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "displayName": "File Format",
+          "name": "fileFormat",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "description": "File format of the data",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        },
+        {
+          "displayName": "Port Type",
+          "name": "portType",
+          "typeName": "port_type",
+          "defaultValue": "BatchPort",
+          "cardinality": "SINGLE",
+          "description": "Type of the Port",
+          "includeInNotification": false,
+          "isIndexable": true,
+          "isOptional": true,
+          "isUnique": false
+        }
+      ],
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "owner",
+      "superTypes": [
+        "Asset"
+      ],
+      "serviceType": "dp",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "id",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "name": "name",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        },
+        {
+          "name": "email",
+          "typeName": "string",
+          "cardinality": "SINGLE",
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": true
+        },
+        {
+          "name": "ownerType",
+          "typeName": "owner_type",
+          "cardinality": "SINGLE",
+          "isIndexable": true,
+          "isOptional": false,
+          "isUnique": false
+        }
+      ]
+    }
+  ],
+  "relationshipDefs": [
+    {
+      "name": "data_ports",
+      "description": "Data to Port relationship",
+      "relationshipCategory": "COMPOSITION",
+      "relationshipLabel": "__data.ports",
+      "endDef1": {
+        "name": "ports",
+        "type": "data",
+        "isContainer": true,
+        "cardinality": "SET",
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "name": "data",
+        "type": "port",
+        "isContainer": false,
+        "cardinality": "SINGLE",
+        "isLegacyAttribute": true
+      },
+      "propagateTags": "ONE_TO_TWO",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "data_product_input_data",
+      "description": "List of input data of the data product",
+      "relationshipCategory": "AGGREGATION",
+      "relationshipLabel": "__data_product.inputs",
+      "endDef1": {
+        "name": "inputs",
+        "type": "data_product",
+        "cardinality": "SET",
+        "description": "List of Input Data of the data product",
+        "isContainer": false,
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "name": "dataProducts",
+        "type": "data",
+        "cardinality": "SET",
+        "description": "Data product associated with this data",
+        "isContainer": true,
+        "isLegacyAttribute": true
+      },
+      "propagateTags": "TWO_TO_ONE",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    },
+    {
+      "name": "data_product_output_data",
+      "description": "List of output data of the data product",
+      "relationshipCategory": "AGGREGATION",
+      "relationshipLabel": "__data_product.outputs",
+      "endDef1": {
+        "name": "outputs",
+        "type": "data_product",
+        "cardinality": "SET",
+        "description": "List of Output Data of the data product",
+        "isContainer": false,
+        "isLegacyAttribute": true
+      },
+      "endDef2": {
+        "name": "dataProducts",
+        "type": "data",
+        "cardinality": "SET",
+        "description": "Data product associated with this data",
+        "isContainer": true,
+        "isLegacyAttribute": true
+      },
+      "propagateTags": "TWO_TO_ONE",
+      "serviceType": "dp",
+      "typeVersion": "v0.0.1",
+      "version": 1
+    }
+  ]
+}

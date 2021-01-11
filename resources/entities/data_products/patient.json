@@ -1,0 +1,42 @@
+{
+  "referredEntities": {
+    "-100": {
+      "guid": "-100",
+      "typeName": "data_set",
+      "attributes": {
+        "name": "Patient Demographic",
+        "qualifiedName": "ds.patient-demographics",
+        "dataLocation": "Patient Demographic Data Location"
+      }
+    },
+    "-200": {
+      "guid": "-200",
+      "typeName": "data_set",
+      "attributes": {
+        "name": "Patient Risk Profile",
+        "qualifiedName": "ds.patient-risk-profile",
+        "dataLocation": "Patient Risk Profile Data"
+      }
+    }
+  },
+  "entity": {
+    "typeName": "data_product",
+    "attributes": {
+      "name": "Patient Risk Profile",
+      "qualifiedName": "dp.patient-risk-profile",
+      "description": "This data product calculates Patient Risk Profile",
+      "InputDataSets": [
+        {
+          "guid": "-100",
+          "typeName": "data_set"
+        }
+      ],
+      "OutputDatasets": [
+        {
+          "guid": "-200",
+          "typeName": "data_set"
+        }
+      ]
+    }
+  }
+}
