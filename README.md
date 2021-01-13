@@ -44,7 +44,7 @@ To build the above type definition we require the followings..
 - **Enum Types:** owner_type, port_type
 - **Relationships:** data_product_input_data, data_porudct_output_data, data_ports
 
-Create `data_product` entity type:
+Create [data_product](atlas_model_json/models/data_product.json) entity type:
 ```shell script
 curl -i -XPOST \
     -H 'Content-Type: application/json' \
@@ -63,7 +63,7 @@ curl -i -XPOST \
 - **Custom Entity Types:** dp_process
 - **Relationships:** dp_process_input_port, dp_process_output_port
 
-Create `dp_process` entity type:
+Create [dp_process](atlas_model_json/models/dp_process.json) entity type:
 ```shell script
 curl -i -XPOST \
     -H 'Content-Type: application/json' \
@@ -73,7 +73,8 @@ curl -i -XPOST \
     -d @atlas_model_json/models/dp_process.json
 ```
 ---
-Create Patient Info `data_product` entities with lineage:
+## Entity Creation
+Create Patient Info `data_product` entities with lineage as per [patient.yaml](./atlas_model_json/entities/patient.yaml)
 ```shell script
 curl -i -XPOST \
     -H 'Content-Type: application/json' \
@@ -101,8 +102,7 @@ curl -i -XDELETE \
   http://<ATLAS_URL>/api/atlas/v2/entity/bulk?guid={GUID}&guid={GUID}
 ```
 
-
-**TODOs**
+***TODO***
 ---
 - Understand Atlas usage of the schema tab
 - Create lineage from DP to DP while having lineage between data as well
